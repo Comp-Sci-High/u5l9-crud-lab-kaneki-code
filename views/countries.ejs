@@ -10,7 +10,7 @@
       <div class="card-container">
 
       <!-- Loop through all countries using a for loop -->
-<%for(letx=0;x<data.length;x++%>{%>
+<%for(let x=0; x <data.length;x++){%>
          <div class="card">
              <!-- Use the flagURL key to set the image url -->
             <img src="<%= data[x].flagURL%>" alt="USA flag">
@@ -19,13 +19,13 @@
                <h2><%= data[x].country%></h2>
 
               <!-- Use the population key to set the span tag -->
-               <p>🧑‍🤝‍🧑 Population: <span><%= data[x].flagURL%></span></p>
+               <p>🧑‍🤝‍🧑 Population: <span><%= data[x].population%></span></p>
 
               <!-- Use the officialLanguage key to set the span tag -->
-               <p>🗣️ Language: <span><%= data[x].officialLanguage></span></p>
+               <p>🗣️ Language: <span><%= data[x].officialLanguage%></span></p>
 
               <!-- Use the hasNuclearWeapons key to set the span tag -->
-               <p>☢️ Nuclear Weapons: <span><%= data[x].hasNuclearWeapons</span></p>
+               <p>☢️ Nuclear Weapons: <span><%= data[x].hasNuclearWeapons%></span></p>
             </div>
          </div>
 

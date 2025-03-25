@@ -12,6 +12,7 @@ app.use((req, res, next) => {
 
 app.set("view engine", "ejs");
 
+app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 
 const countrySchema = new mongoose.Schema({
@@ -40,7 +41,7 @@ app.post("/add/country", async (req,res)=>{
 // Create a GET route for "/" that renders countries.ejs with every country from the Countries collection (1 point)
 app.get("/", async(req,res)=>{
   const data = await Country.find({})
-  res.render("home.ejs", {data})
+  res.render("countries.ejs", {data})
 })
 
 // Go to countries.ejs and follow the tasks there (2 points)
@@ -65,7 +66,7 @@ app.delete("/delete/:country", async (req,res)=>{
 async function startServer() {
   
     // add your SRV string with a database called countries
-  await mongoose.connect("...");
+  await mongoose.connect("mongodb+srv://SE12:CSH2025@cluster0.pqx7f.mongodb.net/countries?retryWrites=true&w=majority&appName=Cluster0");
 
   app.listen(3000, () => {
     console.log("Server is running");
